@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Text Analyzer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            text-align: center;
+            padding: 20px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 150px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background: white;
+            border-radius: 10px;
+            width: 60%;
+            margin-left: auto;
+            margin-right: auto;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Text Analyzer</h2>
+
+
+    <div id="result" class="result"></div>
+
+
+    if (text.trim() === "") {
+    document.getElementById("result").innerHTML = "Please enter some text!";
+    return;
+    }
+
+
+    let charCount = text.length;
+
+
+    let words = text.trim().split(/\s+/);
+    let wordCount = words.length;
+
+
+    let reversedText = text.split("").reverse().join("");
+
+
+    document.getElementById("result").innerHTML = `
+    <p><strong>Total Characters:</strong> ${charCount}</p>
+    <p><strong>Total Words:</strong> ${wordCount}</p>
+    <p><strong>Reversed Text:</strong><br>${reversedText}</p>
+    `;
+    }
+    </script>
+
+</body>
+</html>
